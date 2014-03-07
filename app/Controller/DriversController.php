@@ -47,6 +47,7 @@ class DriversController extends AppController {
  */
 	public function add() {
 		if ($this->request->is('post')) {
+                    try{
 			$this->Driver->create();
 			if ($this->Driver->save($this->request->data)) {
 				$this->Session->setFlash(__('The driver has been saved.'));
@@ -54,6 +55,15 @@ class DriversController extends AppController {
 			} else {
 				$this->Session->setFlash(__('The driver could not be saved. Please, try again.'));
 			}
+                    } catch(PDOException $e) {
+                        //Error
+                        $code = $e->getCode();
+                        if($code==23000) {
+                            $this->Session->setFlash(__('The Driver Id already exists'));
+                        } else {
+                             $this->Session->setFlash(__($code));
+                        }
+                    }
 		}
 	}
 
