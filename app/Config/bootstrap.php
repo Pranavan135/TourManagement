@@ -90,6 +90,7 @@ Configure::write('Dispatcher.filters', array(
 	'AssetDispatcher',
 	'CacheDispatcher'
 ));
+CakePlugin::load('DebugKit');
 
 /**
  * Configures default file logging options
