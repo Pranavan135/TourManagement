@@ -6,7 +6,7 @@
 		echo $this->Form->input('id');
 		echo $this->Form->input('name');
 		echo $this->Form->input('address');
-		echo $this->Form->input('<b> Telephone No</b>');
+		echo $this->Form->input('tp_no');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
