@@ -3,7 +3,7 @@
 	<fieldset>
 		<legend><?php echo __('Add Driver'); ?></legend>
 	<?php
-                echo $this->Form->input('id');
+                echo $this->Form->input('id',array('type' => 'int'));
 		echo $this->Form->input('Name');
 		echo $this->Form->input('Address');
 		echo $this->Form->input('Telephone No');
